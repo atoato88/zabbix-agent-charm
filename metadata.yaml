@@ -1,17 +1,10 @@
 name: zabbix-agent-nci
-summary: <Fill in summary here>
+summary: install zabbix-agent
 maintainer: ubuntu <ubuntu@localhost>
 description: |
-  <Multi-line description here>
+  this charm install zabbix-agent, but not create relationship with zabbix-server.
+  for creating relationship with zabbix-server, you set zabbix-server-ip-address value in config.yaml file.
+  so, this charm assume zabbix-server has created already.
 categories:
   - misc
 subordinate: false
-provides:
-  provides-relation:
-    interface: interface-name
-requires:
-  requires-relation:
-    interface: interface-name
-peers:
-  peer-relation:
-    interface: interface-name

@@ -9,9 +9,11 @@ hostname=`hostname`
 #sudo usermod -a -G adm zabbix
 sudo gpasswd -a zabbix adm
 
-sed -ei "s/^Server=.*/Server=$server/g" /etc/zabbix/zabbix_agentd.conf
-sed -ei "s/^ServerActive=.*/ServerActive=$server/g" /etc/zabbix/zabbix_agentd.conf
-sed -ei "s/^Hostname=.*/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
-sed -ei "s/^# EnableRemoteCommands=0/EnableRemoteCommands=1/g" /etc/zabbix/zabbix_agentd.conf
+sed -i -e "s/^Server=.*/Server=$server/g" /etc/zabbix/zabbix_agentd.conf
+sed -i -e "s/^ServerActive=.*/ServerActive=$server/g" /etc/zabbix/zabbix_agentd.conf
+sed -i -e "s/^Hostname=.*/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
+sed -i -e "s/^# EnableRemoteCommands=0/EnableRemoteCommands=1/g" /etc/zabbix/zabbix_agentd.conf
 
 install -g root -o root -m 644 files/userparameter_general.conf /etc/zabbix/zabbix_agentd.d/userparameter_general.conf
+
+#hooks/start

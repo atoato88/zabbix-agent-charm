@@ -10,14 +10,14 @@ juju-log 'run stop hook.'
 
 service zabbix-agent stop
 
-mv -f /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old
+#mv -f /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old
 rm -f /etc/zabbix/zabbix_agentd.d/userparameter_general.conf 
 
 dpkg -l zabbix-agent | grep -Eq "^ii"
 if [ $? -eq 0 ]
 then
   sudo dpkg -r zabbix-agent
-  #sudo dpkg -P zabbix-agent
+  sudo dpkg -P zabbix-agent
 fi
  
 sudo gpasswd -d zabbix adm
