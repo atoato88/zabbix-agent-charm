@@ -8,6 +8,8 @@
 
 juju-log 'run stop hook.'
 
+# Zabbix
+
 service zabbix-agent stop
 
 #mv -f /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old
@@ -21,3 +23,19 @@ then
 fi
  
 sudo gpasswd -d zabbix adm
+
+# IPMI
+# we don't need to remove IPMI tools.
+
+#TODO  disable PEF
+
+
+# SMART
+# we don't need to remove SMART tools.
+
+#TODO remove script from crontab 
+
+
+
+
+

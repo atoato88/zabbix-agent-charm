@@ -3,6 +3,8 @@
 
 juju-log 'run config-changed hook.'
 
+# Zabbix
+
 server=`config-get zabbix-server-ip-address`
 hostname=`hostname`
 
@@ -15,5 +17,32 @@ sed -i -e "s/^Hostname=.*/Hostname=$hostname/g" /etc/zabbix/zabbix_agentd.conf
 sed -i -e "s/^# EnableRemoteCommands=0/EnableRemoteCommands=1/g" /etc/zabbix/zabbix_agentd.conf
 
 install -g root -o root -m 644 files/userparameter_general.conf /etc/zabbix/zabbix_agentd.d/userparameter_general.conf
+
+# IPMI
+
+#TODO  modprobe some kernel modules.
+
+#TODO  check /etc/modules, and insert modules.
+
+#TODO  enable PEF
+
+snmp_server=`config-get ipmi-snmp-server-ip-address`
+snmp_community=`config-get ipmi-snmp-trap-community`
+
+#TODO  sed hostname in PEF SNMP Trap file.
+#TODO  sed SNMP Trap IP address in PEF SNMP Trap file.
+#TODO  sed SNMP community name in PEF SNMP Trap file.
+#TODO  set to PEF SNMP Trap from loading file
+
+#TODO register BMC IP address to Zabbix Server
+
+# SMART
+
+#TODO  copy script file
+
+#TODO  create script file to 'files' directory.
+#TODO  register script to crontab
+
+
 
 #hooks/start

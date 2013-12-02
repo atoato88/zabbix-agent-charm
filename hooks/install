@@ -26,3 +26,16 @@ juju-log 'run install hook.'
 
 #sudo dpkg -i files/zabbix-agent_2.0.8-1+precise_amd64.deb
 sudo dpkg -i files/zabbix-agent_2.0.9-1+precise_amd64.deb
+
+# IPMI 
+
+#TODO  apt-get -y install freeipmi-tools
+
+
+# SMART 
+
+#TODO  apt-get -y install smartmontools unzip
+#TODO  copy MegaCLI.zip to 'files' directory.
+#TODO  unzip -o MegaCLI.zip
+#TODO  dpkg -i MegaCLI/mega-------.deb
+

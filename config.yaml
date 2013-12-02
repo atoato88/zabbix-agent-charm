@@ -7,4 +7,11 @@ options:
     type: string
     default: "template1,template2"
     description: "comma separated template names of registering to zabbix server."
-
+  ipmi-snmp-server-ip-address:
+    type: string
+    default: "x.x.x.x"
+    description: "IP address for SNMP Trap of IPMI."
+  ipmi-snmp-trap-community:
+    type: string
+    default: "public"
+    description: "SNMP community name"
