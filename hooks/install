@@ -24,8 +24,8 @@ juju-log 'run install hook.'
 #sudo dpkg -i zabbix-agent_2.0.8-1+precise_amd64.deb
 #sudo dpkg -i zabbix-agent_2.0.9-1+precise_amd64.deb
 
-#sudo dpkg -i files/zabbix-agent_2.0.8-1+precise_amd64.deb
-sudo dpkg -i files/zabbix-agent_2.0.9-1+precise_amd64.deb
+sudo dpkg -i files/zabbix-agent_2.0.8-1+precise_amd64.deb
+#sudo dpkg -i files/zabbix-agent_2.0.9-1+precise_amd64.deb
 
 # IPMI 
 
