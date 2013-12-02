@@ -5,7 +5,14 @@
 # that it is live... you could remove it and sleep for a bit to allow the load
 # balancer to stop sending traffic.
 # rm /srv/webroot/server-live.txt && sleep 30
- 
+
+juju-log 'run stop hook.'
+
+service zabbix-agent stop
+
+mv -f /etc/zabbix/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf.old
+rm -f /etc/zabbix/zabbix_agentd.d/userparameter_general.conf 
+
 dpkg -l zabbix-agent | grep -Eq "^ii"
 if [ $? -eq 0 ]
 then

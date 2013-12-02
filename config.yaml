@@ -1,14 +1,10 @@
 options:
-  string-option:
+  zabbix-server-ip-address:
     type: string
-    default: "Default Value"
-    description: "A short description of the configuration option"
-  boolean-option:
-    type: boolean
-    default: False
-    description: "A short description of the configuration option"
-  int-option:
-    type: int
-    default: 9001
-    description: "A short description of the configuration option"
+    default: "x.x.x.x"
+    description: "IP address for zabbix server."
+  zabbix-templates:
+    type: string
+    default: "template1,template2"
+    description: "comma separated template names of registering to zabbix server."
 

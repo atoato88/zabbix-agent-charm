@@ -5,6 +5,8 @@
 # failing to account for a debconf question on a dependency, or trying to pull
 # from github without installing git first.
 
+juju-log 'run install hook.'
+
 zabbix_agent_file_url='http://repo.zabbix.com/zabbix/2.0/ubuntu/pool/main/z/zabbix/zabbix-agent_2.0.8-1+precise_amd64.deb'
  
 mkdir -p zabbix_agent
@@ -19,3 +21,4 @@ fi
 file_name=`basename ${zabbix_agent_file_url}`
  
 sudo dpkg -i zabbix-agent_2.0.8-1+precise_amd64.deb
+
