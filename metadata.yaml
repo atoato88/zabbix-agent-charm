@@ -1,4 +1,4 @@
-name: zabbix-agent-nci
+name: zabbix-agent
 summary: install zabbix-agent
 maintainer: ubuntu <ubuntu@localhost>
 description: |
