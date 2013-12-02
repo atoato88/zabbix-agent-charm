@@ -1,0 +1,21 @@
+#!/bin/bash
+# Here do anything needed to install the service
+# i.e. apt-get install -y foo  or  bzr branch http://myserver/mycode /srv/webroot
+# Make sure this hook exits cleanly and is idempotent, common problems here are
+# failing to account for a debconf question on a dependency, or trying to pull
+# from github without installing git first.
+
+zabbix_agent_file_url='http://repo.zabbix.com/zabbix/2.0/ubuntu/pool/main/z/zabbix/zabbix-agent_2.0.8-1+precise_amd64.deb'
+ 
+mkdir -p zabbix_agent
+cd zabbix_agent
+ 
+is_downloaded=`find . -name "zabbix*.deb" | wc -l`
+if [ $is_downloaded -eq '0' ]
+then
+  wget $zabbix_agent_file_url
+fi
+ 
+file_name=`basename ${zabbix_agent_file_url}`
+ 
+sudo dpkg -i zabbix-agent_2.0.8-1+precise_amd64.deb
